@@ -30,8 +30,11 @@
 static struct nrc *nrc_nw;
 
 
-#ifdef CONFIG_SUPPORT_NEW_NETLINK
+#ifdef CONFIG_SUPPORT_NEWER_NETLINK
 static int nrc_nl_pre_doit(const struct genl_split_ops *ops,
+			   struct sk_buff *skb, struct genl_info *info)
+#elif defined(CONFIG_SUPPORT_NEW_NETLINK)
+static int nrc_nl_pre_doit(const struct genl_ops *ops,
 			   struct sk_buff *skb, struct genl_info *info)
 #else
 static int nrc_nl_pre_doit(struct genl_ops *ops,
@@ -41,8 +44,11 @@ static int nrc_nl_pre_doit(struct genl_ops *ops,
 	return 0;
 }
 
-#ifdef CONFIG_SUPPORT_NEW_NETLINK
+#ifdef CONFIG_SUPPORT_NEWER_NETLINK
 static void nrc_nl_post_doit(const struct genl_split_ops *ops,
+			     struct sk_buff *skb, struct genl_info *info)
+#elif defined(CONFIG_SUPPORT_NEW_NETLINK)
+static void nrc_nl_post_doit(const struct genl_ops *ops,
 			     struct sk_buff *skb, struct genl_info *info)
 #else
 static void nrc_nl_post_doit(struct genl_ops *ops,
