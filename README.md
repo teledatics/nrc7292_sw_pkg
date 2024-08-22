@@ -1,7 +1,17 @@
 # NRC7292 Software Package for Host mode (Linux OS)
 
 ## Notice
+
+> [!CAUTION]
+> The software package released here is specifically designed for the NRC7292 EVK, and the accompanying board data files in https://github.com/newracom/nrc7292_sw_pkg/tree/master/package/evk/binary and 
+https://github.com/newracom/nrc7292_sw_pkg/tree/master/package/evk/sw_pkg/nrc_pkg/sw/firmware are intended solely for this model.
+> If users plan to use this software package with other devices that incorporate the NRC7292 chip, they should utilize the board data file supplied by the device's vendor.
+
+> [!IMPORTANT]
+> For support regarding the SAE Hash-to-Element (H2E), please refer to https://github.com/newracom/nrc7292_sw_pkg/blob/master/README-H2E.md
+
 ### Release roadmap
+- v1.5.1 (2024.05.10): Hotfix
 - v1.5 (2023.10.31)
 - v1.4.1 (2023.09.08)
 - v1.4 (2023.06.16)
@@ -26,7 +36,7 @@
 - v1.3.0 (2020.05.30)
 
 ### Latest release
-- [NRC7292_SW_PKG_v1.5](https://github.com/newracom/nrc7292_sw_pkg/releases/tag/v1.5)
+- [NRC7292_SW_PKG_v1.5.1](https://github.com/newracom/nrc7292_sw_pkg/releases/tag/v1.5.1)
 
 ### Release package contents
 - package: NRC7292 software package for global regulatory domains
