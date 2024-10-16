@@ -65,6 +65,7 @@ extern u32 arv_time_last;
 extern struct lb_time_info *time_info_array;
 extern u32 lb_hexdump;
 
+void nrc_hif_cspi_read_credit(struct nrc_hif_device *hdev, int q, int *p_front, int *p_rear, int *p_credit);
 void nrc_dbg_init(struct device *dev);
 void nrc_dbg_enable(enum NRC_DEBUG_MASK mk);
 void nrc_dbg_disable(enum NRC_DEBUG_MASK mk);

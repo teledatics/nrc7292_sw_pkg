@@ -159,7 +159,6 @@ void nrc_dump_wim(struct sk_buff *skb)
 }
 
 #define CREDIT_QUEUE_MAX 12
-extern void nrc_hif_cspi_read_credit(struct nrc_hif_device *hdev, int q, int *p_front, int *p_rear, int *p_credit); 
 
 static int nrc_debugfs_txq_read(void *data, u64 *val)
 {

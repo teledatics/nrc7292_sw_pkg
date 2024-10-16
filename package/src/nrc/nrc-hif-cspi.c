@@ -2027,7 +2027,7 @@ int spi_test(struct nrc_hif_device *hdev)
 	return 0;
 }
 
-void spi_wakeup(struct nrc_hif_device *hdev)
+static void spi_wakeup(struct nrc_hif_device *hdev)
 {
 	struct nrc_spi_priv *priv = hdev->priv;
 	struct spi_device *spi = priv->spi;
@@ -2334,7 +2334,7 @@ static void c_spi_config(struct nrc_spi_priv *priv)
 	c_spi_enable_irq(priv->spi, priv->spi->irq >= 0 ? true : false, CSPI_EIRQ_A_ENABLE);
 }
 
-int nrc_cspi_gpio_alloc(struct spi_device *spi)
+static int nrc_cspi_gpio_alloc(struct spi_device *spi)
 {
 #if defined(SPI_DBG)
 	/* Claim gpio used for debugging */
@@ -2393,7 +2393,7 @@ err:
 	return -EINVAL;
 }
 
-void nrc_cspi_gpio_free(struct spi_device *spi)
+static void nrc_cspi_gpio_free(struct spi_device *spi)
 {
 
 #if defined(SPI_DBG)
@@ -2667,7 +2667,7 @@ static struct spi_device *nrc_create_spi_device (void)
 		return NULL;
 	}
 
-	dev_info(&spi->dev, "SPI Device Created (bus_num:%d, cs_num:%d, irq_num:%d, max_speed:%d\n",
+	dev_info(&spi->dev, "SPI Device Created (bus_num:%d, cs_num: %hhn, irq_num:%d, max_speed:%d\n",
 			spi->master->bus_num,
 			spi->chip_select,
 			spi->irq,
